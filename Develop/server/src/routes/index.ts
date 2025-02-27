@@ -4,7 +4,11 @@ const router = express.Router();
 
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-const __filename = fileURLToPath(import.meta.url);
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = path.resolve();
+
 const __dirname = path.dirname(__filename);
 import apiRoutes from './api/index.js';
 

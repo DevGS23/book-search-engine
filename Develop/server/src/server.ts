@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express'; // Import types for Request and Response
 import mongoose from 'mongoose';
-import userRoutes from './routes/userRoutes';
+import userRoutes from './routes/userRoutes.js';
+import db from './config/connection.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
