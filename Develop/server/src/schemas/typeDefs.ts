@@ -1,0 +1,33 @@
+import { gql } from 'graphql-tag';
+
+const typeDefs = gql`
+  type Book {
+    bookId: ID!
+    authors: [String]
+    description: String
+    title: String
+    image: String
+    link: String
+  }
+
+  type User {
+    _id: ID!
+    username: String!
+    email: String!
+    bookCount: Int
+    savedBooks: [Book]
+  }
+
+  type Query {
+    me: User
+  }
+
+  type Mutation {
+    login(email: String!, password: String!): User
+    addUser(username: String!, email: String!, password: String!): User
+    saveBook(bookId: ID!, authors: [String], description: String, title: String, image: String, link: String): User
+    removeBook(bookId: ID!): User
+  }
+`;
+
+export default typeDefs;
